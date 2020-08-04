@@ -8,7 +8,9 @@ pub fn verse(n: u32) -> String {
 }
 
 pub fn sing(start: u32, end: u32) -> String {
-    assert!(start > end, "Must drink beer, not stockpile it!");
+    if start < end {
+        return verse(start)
+    }
     let mut song = verse(start);
     let mut n = start;
     while n > end {
